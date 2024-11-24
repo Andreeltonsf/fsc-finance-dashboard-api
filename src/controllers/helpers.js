@@ -29,3 +29,12 @@ export const ok = (body) => {
         body,
     }
 }
+
+export const notFound = (errorMessage) => {
+    return {
+        statusCode: 404,
+        body: {
+            errorMessage,
+        },
+    }
+}
