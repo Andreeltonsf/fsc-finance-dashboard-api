@@ -22,6 +22,14 @@ app.post('/api/users', async (request, response) => {
     response.status(statusCode).send(body)
 })
 
+app.get('/api/users/:userId', async (request, response) => {
+    const getByIdIdController = new GetByIdIdController()
+
+    const { statusCode, body } = await getByIdIdController.execute(request)
+
+    response.status(statusCode).send(body)
+})
+
 app.listen(process.env.PORT, () => {
     console.log('Server is running')
 })

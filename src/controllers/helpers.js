@@ -22,3 +22,10 @@ export const serverError = (errorMessage) => {
         },
     }
 }
+
+export const ok = (body) => {
+    return {
+        statusCode: 200,
+        body,
+    }
+}
