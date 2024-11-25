@@ -22,6 +22,14 @@ app.post('/api/users', async (request, response) => {
     response.status(statusCode).send(body)
 })
 
+app.patch('/api/users/:userId', async (request, response) => {
+    const updateUserController = new UpdateUserController()
+
+    const { statusCode, body } = await updateUserController.execute(request)
+
+    response.status(statusCode).send(body)
+})
+
 app.get('/api/users/:userId', async (request, response) => {
     const getByIdIdController = new GetByIdIdController()
 
